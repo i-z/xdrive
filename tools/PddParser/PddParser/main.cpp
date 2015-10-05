@@ -24,9 +24,11 @@
 #define TEST_NODE "Test"
 #define QUESTION_NODE "Question"
 #define ANSWER_NODE "Answer"
-
 #define CHOICES "Choices"
 #define CHOICE "Choice"
+#define IMAGE "Image"
+
+#define DEFAULT_IMAGE_NAME "img000.jpg"
 
 // trim from start
 static inline std::string &ltrim(std::string &s) {
@@ -132,6 +134,9 @@ int main(int argc, const char * argv[]) {
 			inputFile >>s;
 			if (s == CHOICE_TOKEN2) {
 				out << "\">\n";
+				
+				out << "\t\t\t<" << IMAGE << " Source=\"" << DEFAULT_IMAGE_NAME << "\" />\n";
+				
 				out << "\t\t\t<" << CHOICES << ">\n";
 				
 				char ch;
